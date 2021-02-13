@@ -1,0 +1,27 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://mvn.mchv.eu/repository/mchv/" }
+}
+
+dependencies {
+    // kotlin core + coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+
+    // tdlight lib
+    implementation 'it.tdlight:tdlight-java:4.171.62'
+
+    // tdlight native drivers
+    implementation 'it.tdlight:tdlight-natives-linux-amd64:3.2.52'
+    implementation 'it.tdlight:tdlight-natives-linux-x86:3.2.52'
+    implementation 'it.tdlight:tdlight-natives-linux-armv6:3.2.52'
+    implementation 'it.tdlight:tdlight-natives-linux-armv7:3.2.52'
+    implementation 'it.tdlight:tdlight-natives-windows-amd64:3.2.52'
+    implementation 'it.tdlight:tdlight-natives-osx-amd64:3.2.52'}

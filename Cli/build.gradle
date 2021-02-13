@@ -1,0 +1,42 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+    id 'application'
+}
+
+version 'unspecified'
+mainClassName = "com.maaxgr.telekram.cli.MainKt"
+
+
+repositories {
+    // repo for kotlin
+    mavenCentral()
+
+    // repo for cli library
+    maven { url 'https://jitpack.io' }
+
+    // repo for telegram library
+    maven { url "https://mvn.mchv.eu/repository/mchv/" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+
+    // cli library
+    implementation 'com.github.kotlin-inquirer:kotlin-inquirer:v0.0.2-alpha'
+
+    // telegram lib
+    implementation project(':Library')
+}
+
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': mainClassName
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

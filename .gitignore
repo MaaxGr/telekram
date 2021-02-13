@@ -1,0 +1,9 @@
+.cache
+.gradle
+.idea
+build
+Cli/build
+ExampleBasic/build
+Library/build
+tdlib
+tdlib.log

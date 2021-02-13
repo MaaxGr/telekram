@@ -1,0 +1,4 @@
+rootProject.name = 'Telekram'
+include 'Library'
+include 'Cli'
+include 'ExampleBasic'
